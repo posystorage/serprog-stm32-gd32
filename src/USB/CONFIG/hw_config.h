@@ -19,6 +19,9 @@
 #define USB_USART_TXFIFO_SIZE   1024	//USB虚拟串口发送FIFO大小		
 #define USB_USART_REC_LEN	 	200		//USB串口接收缓冲区最大字节数
 
+#define BULK_MAX_PACKET_SIZE 0x00000040            /* Max packet size for FullSpeed bulk transfer */
+#define VCP_DATA_SIZE        0x40                  /* Should be the same as BULK_MAX_PACKET_SIZE */
+
 //定义一个USB USART FIFO结构体
 typedef struct  
 {										    
@@ -43,12 +46,26 @@ void Get_SerialNum(void);
 
 //不同USB功能添加的函数声明 
 bool USART_Config(void);
-void USB_To_USART_Send_Data(uint8_t* data_buffer, uint8_t Nb_bytes);
-void USART_To_USB_Send_Data(void);
-void USB_USART_SendData(u8 data);
-void usb_printf(char* fmt,...); 
+//void USB_To_USART_Send_Data(uint8_t* data_buffer, uint8_t Nb_bytes);
+//void USART_To_USB_Send_Data(void);
+//void USB_USART_SendData(u8 data);
+//void usb_printf(char* fmt,...); 
+
+
+
+extern void     usb_putc(char data);
+extern char     usb_getc(void);
+extern uint32_t usb_getu24(void);
+extern uint32_t usb_getu32(void);
+extern void     usb_putu32(uint32_t ww);
+extern void     usb_sync(void);
+
 
 #endif  
+
+
+
+
 
 
 

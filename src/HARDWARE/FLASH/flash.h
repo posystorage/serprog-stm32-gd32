@@ -21,7 +21,7 @@
 
 extern u16 SPI_FLASH_TYPE;		//定义我们使用的flash芯片型号		
 
-#define	SPI_FLASH_CS PAout(2)  //选中FLASH					 
+#define	SPI_FLASH_CS PAout(4)  //选中FLASH					 
 ////////////////////////////////////////////////////////////////////////////
 
 extern u8 SPI_FLASH_BUF[4096];
@@ -45,6 +45,20 @@ extern u8 SPI_FLASH_BUF[4096];
 #define W25X_ManufactDeviceID	0x90 
 #define W25X_JedecDeviceID		0x9F 
 
+
+/* SPI */
+#define SPI_BUS_USED         SPI1
+#define SPI_ENGINE_RCC       RCC_APB2Periph_SPI1
+#define SPI_DEFAULT_SPEED    9000000               /* Default SPI clock = 9MHz to support most chips.*/
+#define SPI_DR_Base          (&(SPI_BUS_USED->DR))
+#define SPI_TX_DMA_CH        DMA1_Channel3         /* SPI1 TX is only available on DMA1 CH3 */
+#define SPI_TX_DMA_FLAG      DMA1_FLAG_TC3
+#define SPI_RX_DMA_CH        DMA1_Channel2         /* SPI1 RX is only available on DMA1 CH2 */
+#define SPI_RX_DMA_FLAG      DMA1_FLAG_TC2
+
+
+
+/*
 void SPI_Flash_Init(void);
 u16  SPI_Flash_ReadID(void);  	    //读取FLASH ID
 u8	 SPI_Flash_ReadSR(void);        //读取状态寄存器 
@@ -58,6 +72,19 @@ void SPI_Flash_Erase_Sector(u32 Dst_Addr);//扇区擦除
 void SPI_Flash_Wait_Busy(void);           //等待空闲
 void SPI_Flash_PowerDown(void);           //进入掉电模式
 void SPI_Flash_WAKEUP(void);			  //唤醒
+*/
+
+#define select_chip() GPIO_ResetBits( GPIOA,  4)
+#define unselect_chip() GPIO_SetBits(  GPIOA,  4)
+
+uint32_t spi_conf(uint32_t speed_hz);
+void spi_bulk_write(uint32_t size);
+void spi_bulk_read(uint32_t size);
+void DMA_configuration(void);
+//extern uint32_t spi_conf(uint32_t speed_hz);
+//extern void spi_bulk_write(uint32_t size);
+//extern void spi_bulk_read(uint32_t size);
+
 #endif
 
 
