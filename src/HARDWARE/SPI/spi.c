@@ -17,21 +17,6 @@
 //SPI口初始化
 //这里针是对SPI1的初始化
 
-void SPI1_Init(void)
-{
-	GPIO_InitTypeDef GPIO_InitStructure;
-  
-	RCC_APB2PeriphClockCmd(	RCC_APB2Periph_GPIOA|RCC_APB2Periph_SPI1, ENABLE );	
- 
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_7;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;  //复用推挽输出
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_Init(GPIOA, &GPIO_InitStructure);
-
- 	GPIO_SetBits(GPIOA,GPIO_Pin_5|GPIO_Pin_6|GPIO_Pin_7);
-
-}   
-/*
 SPI_InitTypeDef  SPI_InitStructure;
 
 void SPI1_Init(void)
@@ -99,7 +84,8 @@ u8 SPI1_ReadWriteByte(u8 TxData)
 }
 
 
-*/
+
+
 
 
 
