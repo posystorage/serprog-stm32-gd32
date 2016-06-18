@@ -45,7 +45,7 @@ void IntToUnicode (u32 value,u8 *pbuf,u8 len);
 void Get_SerialNum(void);
 
 //不同USB功能添加的函数声明 
-bool USART_Config(void);
+//bool USART_Config(void);
 //void USB_To_USART_Send_Data(uint8_t* data_buffer, uint8_t Nb_bytes);
 //void USART_To_USB_Send_Data(void);
 //void USB_USART_SendData(u8 data);

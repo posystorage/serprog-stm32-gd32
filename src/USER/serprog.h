@@ -39,7 +39,7 @@
 #define BUS_NONSPI        (BUS_PARALLEL | BUS_LPC | BUS_FWH)
 
 /* serprog */
-#define S_PGM_NAME            "serprog-STM32VCP"   /* The program's name, must < 16 bytes */
+#define S_PGM_NAME            "serprog-STM32/GD"   /* The program's name, must < 16 bytes */
 #define S_SUPPORTED_BUS       BUS_SPI
 #define S_CMD_MAP ( \
   (1 << S_CMD_NOP)       | \

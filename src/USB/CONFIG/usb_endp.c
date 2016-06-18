@@ -94,10 +94,10 @@ void EP1_IN_Callback (void)
 *******************************************************************************/
 void EP3_OUT_Callback(void)
 {
-	u16 USB_Rx_Cnt; 
-	USB_Rx_Cnt = USB_SIL_Read(EP3_OUT, USB_Rx_Buffer);	//得到USB接收到的数据及其长度  
-	USB_To_USART_Send_Data(USB_Rx_Buffer, USB_Rx_Cnt);	//处理数据（其实就是保存数据） 
-	SetEPRxValid(ENDP3);								//时能端点3的数据接收
+	//u16 USB_Rx_Cnt; 
+	//USB_Rx_Cnt = USB_SIL_Read(EP3_OUT, USB_Rx_Buffer);	//得到USB接收到的数据及其长度  
+	//USB_To_USART_Send_Data(USB_Rx_Buffer, USB_Rx_Cnt);	//处理数据（其实就是保存数据） 
+	//SetEPRxValid(ENDP3);								//时能端点3的数据接收
 }
 
 

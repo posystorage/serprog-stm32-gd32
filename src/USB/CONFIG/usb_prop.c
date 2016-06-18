@@ -234,7 +234,9 @@ void Virtual_Com_Port_Status_In(void)
 {
   if (Request == SET_LINE_CODING)
   {
-    USART_Config();
+    	uu_txfifo.readptr=0;	//清空读指针
+	uu_txfifo.writeptr=0;	//清空写指针
+	USB_USART_RX_STA=0;		//USB USART接收状态清零
     Request = 0;
   }
 }

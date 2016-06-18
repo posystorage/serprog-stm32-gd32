@@ -92,16 +92,16 @@ void Leave_LowPowerMode(void)
 void USB_Interrupts_Config(void)
 { 
 	NVIC_InitTypeDef NVIC_InitStructure;
-	EXTI_InitTypeDef EXTI_InitStructure;
+	/*EXTI_InitTypeDef EXTI_InitStructure;
 
  
-	/* Configure the EXTI line 18 connected internally to the USB IP */
+	// Configure the EXTI line 18 connected internally to the USB IP 
 	EXTI_ClearITPendingBit(EXTI_Line18);
 											  //  开启线18上的中断
 	EXTI_InitStructure.EXTI_Line = EXTI_Line18; // USB resume from suspend mode
 	EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;	//line 18上事件上升降沿触发
 	EXTI_InitStructure.EXTI_LineCmd = ENABLE;
-	EXTI_Init(&EXTI_InitStructure); 	 
+	EXTI_Init(&EXTI_InitStructure); 	 */
 
 	/* Enable the USB interrupt */
 	NVIC_InitStructure.NVIC_IRQChannel = USB_LP_CAN1_RX0_IRQn;	//组2，优先级次之 
@@ -179,7 +179,7 @@ void IntToUnicode (u32 value , u8 *pbuf , u8 len)
 	}
 }
 /////////////////////////////////////////////////////////////////////////////////
- 
+ /*
 //USB COM口的配置信息,通过此函数打印出来. 
 bool USART_Config(void)
 {
@@ -192,7 +192,7 @@ bool USART_Config(void)
 	printf("linecoding.bitrate:%d\r\n",linecoding.bitrate);
 	return (TRUE);
 }
- /*
+ 
 //处理从USB虚拟串口接收到的数据
 //databuffer:数据缓存区
 //Nb_bytes:接收到的字节数.
