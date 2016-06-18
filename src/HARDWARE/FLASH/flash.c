@@ -10,7 +10,7 @@
 //正点原子@ALIENTEK
 //2010/6/13
 //V1.0
-u16 SPI_FLASH_TYPE=W25Q64;//默认就是25Q64
+//u16 SPI_FLASH_TYPE=W25Q64;//默认就是25Q64
 //4Kbytes为一个Sector
 //16个扇区为1个Block
 //W25X16
@@ -338,7 +338,9 @@ SPI_InitTypeDef SPI_InitStructure;
 
 void DMA_configuration(void)
 {
-
+RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1|RCC_AHBPeriph_DMA2, ENABLE);	
+	  DMA_DeInit(SPI_RX_DMA_CH);
+  DMA_DeInit(SPI_TX_DMA_CH);
 DMA_InitStructure_RX.DMA_PeripheralBaseAddr = (uint32_t)SPI_DR_Base;
 DMA_InitStructure_RX.DMA_MemoryBaseAddr     = (uint32_t)USB_Tx_Buf;
 DMA_InitStructure_RX.DMA_DIR                = DMA_DIR_PeripheralSRC;

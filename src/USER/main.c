@@ -15,7 +15,7 @@
 
    	
 //要写入到W25Q64的字符串数组
-const u8 TEXT_Buffer[]={"MiniSTM32 SPI TEST"};
+//const u8 TEXT_Buffer[]={"MiniSTM32 SPI TEST"};
 #define SIZE sizeof(TEXT_Buffer)	 
 	
 void serprog_handle_command(unsigned char command) {

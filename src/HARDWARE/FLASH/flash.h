@@ -49,7 +49,7 @@ extern u8 SPI_FLASH_BUF[4096];
 /* SPI */
 #define SPI_BUS_USED         SPI1
 #define SPI_ENGINE_RCC       RCC_APB2Periph_SPI1
-#define SPI_DEFAULT_SPEED    9000000               /* Default SPI clock = 9MHz to support most chips.*/
+#define SPI_DEFAULT_SPEED    9000000              /* Default SPI clock = 9MHz to support most chips.*/
 #define SPI_DR_Base          (&(SPI_BUS_USED->DR))
 #define SPI_TX_DMA_CH        DMA1_Channel3         /* SPI1 TX is only available on DMA1 CH3 */
 #define SPI_TX_DMA_FLAG      DMA1_FLAG_TC3
