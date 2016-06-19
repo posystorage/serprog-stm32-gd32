@@ -2,18 +2,7 @@
 #define __HW_CONFIG_H
 #include "platform_config.h"
 #include "usb_type.h" 
-//////////////////////////////////////////////////////////////////////////////////	 
-//本程序只供学习使用，未经作者许可，不得用于其它任何用途
-//ALIENTEK战舰STM32开发板V3
-//USB-hw_config 代码	   
-//正点原子@ALIENTEK
-//技术论坛:www.openedv.com
-//创建日期:2015/1/28
-//版本：V1.0
-//版权所有，盗版必究。
-//Copyright(C) 广州市星翼电子科技有限公司 2009-2019
-//All rights reserved									  
-////////////////////////////////////////////////////////////////////////////////// 
+
   
  
 #define USB_USART_TXFIFO_SIZE   1024	//USB虚拟串口发送FIFO大小		
@@ -44,12 +33,6 @@ void USB_Port_Set(u8 enable);
 void IntToUnicode (u32 value,u8 *pbuf,u8 len);
 void Get_SerialNum(void);
 
-//不同USB功能添加的函数声明 
-//bool USART_Config(void);
-//void USB_To_USART_Send_Data(uint8_t* data_buffer, uint8_t Nb_bytes);
-//void USART_To_USB_Send_Data(void);
-//void USB_USART_SendData(u8 data);
-//void usb_printf(char* fmt,...); 
 
 
 

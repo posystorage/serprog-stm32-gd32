@@ -8,18 +8,6 @@
 #include "string.h"	
 #include "stdarg.h"		 
 #include "stdio.h"	
-//////////////////////////////////////////////////////////////////////////////////	 
-//本程序只供学习使用，未经作者许可，不得用于其它任何用途
-//ALIENTEK战舰STM32开发板V3
-//USB-hw_config 代码	   
-//正点原子@ALIENTEK
-//技术论坛:www.openedv.com
-//创建日期:2015/1/28
-//版本：V1.0
-//版权所有，盗版必究。
-//Copyright(C) 广州市星翼电子科技有限公司 2009-2019
-//All rights reserved									  
-////////////////////////////////////////////////////////////////////////////////// 
 
 /* Do not place const in front of declarations.                  *
  * const variables are stored in flash that needs a 2-cycle wait */
@@ -178,79 +166,7 @@ void IntToUnicode (u32 value , u8 *pbuf , u8 len)
 		pbuf[ 2* idx + 1] = 0;
 	}
 }
-/////////////////////////////////////////////////////////////////////////////////
- /*
-//USB COM口的配置信息,通过此函数打印出来. 
-bool USART_Config(void)
-{
-	uu_txfifo.readptr=0;	//清空读指针
-	uu_txfifo.writeptr=0;	//清空写指针
-	USB_USART_RX_STA=0;		//USB USART接收状态清零
-	printf("linecoding.format:%d\r\n",linecoding.format);
-  	printf("linecoding.paritytype:%d\r\n",linecoding.paritytype);
-	printf("linecoding.datatype:%d\r\n",linecoding.datatype);
-	printf("linecoding.bitrate:%d\r\n",linecoding.bitrate);
-	return (TRUE);
-}
- 
-//处理从USB虚拟串口接收到的数据
-//databuffer:数据缓存区
-//Nb_bytes:接收到的字节数.
-void USB_To_USART_Send_Data(u8* data_buffer, u8 Nb_bytes)
-{ 
-	u8 i;
-	u8 res;
-	for(i=0;i<Nb_bytes;i++)
-	{  
-		res=data_buffer[i]; 
-		if((USB_USART_RX_STA&0x8000)==0)		//接收未完成
-		{
-			if(USB_USART_RX_STA&0x4000)			//接收到了0x0d
-			{
-				if(res!=0x0a)USB_USART_RX_STA=0;//接收错误,重新开始
-				else USB_USART_RX_STA|=0x8000;	//接收完成了 
-			}else //还没收到0X0D
-			{	
-				if(res==0x0d)USB_USART_RX_STA|=0x4000;
-				else
-				{
-					USB_USART_RX_BUF[USB_USART_RX_STA&0X3FFF]=res;
-					USB_USART_RX_STA++;
-					if(USB_USART_RX_STA>(USB_USART_REC_LEN-1))USB_USART_RX_STA=0;//接收数据错误,重新开始接收	
-				}					
-			}
-		}   
-	}  
-} 
 
-//发送一个字节数据到USB虚拟串口
-void USB_USART_SendData(u8 data)
-{
-	uu_txfifo.buffer[uu_txfifo.writeptr]=data;
-	uu_txfifo.writeptr++;
-	if(uu_txfifo.writeptr==USB_USART_TXFIFO_SIZE)//超过buf大小了,归零.
-	{
-		uu_txfifo.writeptr=0;
-	} 
-}
-
-//usb虚拟串口,printf 函数
-//确保一次发送数据不超USB_USART_REC_LEN字节
-void usb_printf(char* fmt,...)  
-{  
-	u16 i,j;
-	va_list ap;
-	va_start(ap,fmt);
-	vsprintf((char*)USART_PRINTF_Buffer,fmt,ap);
-	va_end(ap);
-	i=strlen((const char*)USART_PRINTF_Buffer);//此次发送数据的长度
-	for(j=0;j<i;j++)//循环发送数据
-	{
-		USB_USART_SendData(USART_PRINTF_Buffer[j]); 
-	}
-} 
-
-*/
 
 
 void usb_putp(void) {
