@@ -2,9 +2,7 @@
 #include "delay.h"
 #include "sys.h"
 #include "usart.h"
-#include "key.h"
 #include "spi.h"
-#include "flash.h"
 #include "serprog.h"
 
 #include "usb_lib.h"
@@ -131,9 +129,8 @@ void serprog_handle_command(unsigned char command) {
  	Set_USBClock();   
  	USB_Interrupts_Config();    
  	USB_Init();	 	 
-	 
-	KEY_Init();				//°´¼ü³õÊ¼»¯		 	
-	 SPI1_Init(); 
+	 	 	
+	 SPI_IO_Init(); 
 	 DMA_configuration();
 	spi_conf(SPI_DEFAULT_SPEED);
 	while(1)

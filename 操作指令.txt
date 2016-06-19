@@ -1,7 +1,7 @@
 f:
-cd F:\flashrom0.961
+cd F:\github\serprog-stm32-gd32\flashrom0.961
 flashrom -p serprog:dev=\\.\com28:115200
-flashrom -p serprog:dev=\\.\com28:115200 -c  MX25L3206E -r f:\save1.bin
+flashrom -p serprog:dev=\\.\com28:115200  -c MX25L3206E -r f:\save1.bin
 flashrom -p serprog:dev=\\.\com28:115200  -c MX25L3206E -E
 flashrom -p serprog:dev=\\.\com28:115200  -c MX25L3206E -w f:\save1.bin
 flashrom -p serprog:dev=\\.\com28:115200  -c MX25L3206E -v f:\save1.bin
