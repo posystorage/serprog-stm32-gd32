@@ -1,0 +1,480 @@
+Supported flash chips (total: 384):
+
+Vendor        Device                 Test  Known   Size   Type
+                                     OK    Broken  [kB]
+
+(P = PROBE, R = READ, E = ERASE, W = WRITE)
+
+AMD           Am29F010A/B            PRE             128  Parallel
+AMD           Am29F002(N)BB                          256  Parallel
+AMD           Am29F002(N)BT                          256  Parallel
+AMD           Am29F016D                             2048  Parallel
+AMD           Am29F040B                              512  Parallel
+AMD           Am29F080B                             1024  Parallel
+AMD           Am29LV001BB            PREW            128  Parallel
+AMD           Am29LV001BT                            128  Parallel
+AMD           Am29LV002BB                            256  Parallel
+AMD           Am29LV002BT                            256  Parallel
+AMD           Am29LV004BB                            512  Parallel
+AMD           Am29LV004BT                            512  Parallel
+AMD           Am29LV008BB            PREW           1024  Parallel
+AMD           Am29LV008BT                           1024  Parallel
+AMD           Am29LV040B             PRE             512  Parallel
+AMD           Am29LV081B                            1024  Parallel
+AMIC          A25L05PT                                64  SPI
+AMIC          A25L05PU                                64  SPI
+AMIC          A25L10PT                               128  SPI
+AMIC          A25L10PU                               128  SPI
+AMIC          A25L20PT                               256  SPI
+AMIC          A25L20PU                               256  SPI
+AMIC          A25L40PT               PR              512  SPI
+AMIC          A25L40PU               PR              512  SPI
+AMIC          A25L80P                PRE            1024  SPI
+AMIC          A25L16PT                              2048  SPI
+AMIC          A25L16PU               PR             2048  SPI
+AMIC          A25L512                                 64  SPI
+AMIC          A25L010                                128  SPI
+AMIC          A25L020                                256  SPI
+AMIC          A25L040                                512  SPI
+AMIC          A25L080                               1024  SPI
+AMIC          A25L016                               2048  SPI
+AMIC          A25L032                PREW           4096  SPI
+AMIC          A25LQ16                               2048  SPI
+AMIC          A25LQ032/                             4096  SPI
+              A25LQ32A
+AMIC          A25LQ64                               8192  SPI
+AMIC          A29002B                                256  Parallel
+AMIC          A29002T                PREW            256  Parallel
+AMIC          A29040B                                512  Parallel
+AMIC          A49LF040A              PREW            512  LPC
+Atmel         AT25DF021                              256  SPI
+Atmel         AT25DF041A                             512  SPI
+Atmel         AT25DF081                             1024  SPI
+Atmel         AT25DF081A                            1024  SPI
+Atmel         AT25DF161              P              2048  SPI
+Atmel         AT25DF321              PREW           4096  SPI
+Atmel         AT25DF321A             PREW           4096  SPI
+Atmel         AT25DF641(A)           PREW           8192  SPI
+Atmel         AT25DQ161                             2048  SPI
+Atmel         AT25F512               PREW             64  SPI
+Atmel         AT25F512A              PREW             64  SPI
+Atmel         AT25F512B                               64  SPI
+Atmel         AT25F1024(A)           PREW            128  SPI
+Atmel         AT25F2048                              256  SPI
+Atmel         AT25F4096                              512  SPI
+Atmel         AT25FS010              PREW            128  SPI
+Atmel         AT25FS040                              512  SPI
+Atmel         AT26DF041              PREW            512  SPI
+Atmel         AT26DF081A             PREW           1024  SPI
+Atmel         AT26DF161              PR             2048  SPI
+Atmel         AT26DF161A             PREW           2048  SPI
+Atmel         AT26F004                        W      512  SPI
+Atmel         AT29C512               PREW             64  Parallel
+Atmel         AT29C010A              PRE             128  Parallel
+Atmel         AT29C020                               256  Parallel
+Atmel         AT29C040A                              512  Parallel
+Atmel         AT45CS1282                    REW    16896  SPI
+Atmel         AT45DB011D                    REW      128  SPI
+Atmel         AT45DB021D                    REW      256  SPI
+Atmel         AT45DB041D                    REW      512  SPI
+Atmel         AT45DB081D                    REW     1024  SPI
+Atmel         AT45DB161D                    REW     2048  SPI
+Atmel         AT45DB321C                    REW     4224  SPI
+Atmel         AT45DB321D                    REW     4096  SPI
+Atmel         AT45DB642D                    REW     8192  SPI
+Atmel         AT49BV512              PREW             64  Parallel
+Atmel         AT49F002(N)                            256  Parallel
+Atmel         AT49F002(N)T           PR              256  Parallel
+Atmel         AT49(H)F010            PREW            128  Parallel
+Atmel         AT49F020               PRE             256  Parallel
+Atmel         AT49F040                               512  Parallel
+Atmel         AT49F080                              1024  Parallel
+Atmel         AT49F080T                             1024  Parallel
+Atmel         AT49LH002                              256  LPC, FWH
+Catalyst      CAT28F512              PR               64  Parallel
+Bright        BM29F040               PR              512  Parallel
+ESMT          F49B002UA                              256  Parallel
+ESMT          F25L008A               PREW           1024  SPI
+Eon           EN25B05                                 64  SPI
+Eon           EN25B05T                                64  SPI
+Eon           EN25B10                                128  SPI
+Eon           EN25B10T                               128  SPI
+Eon           EN25B20                                256  SPI
+Eon           EN25B20T                               256  SPI
+Eon           EN25B40                                512  SPI
+Eon           EN25B40T                               512  SPI
+Eon           EN25B80                               1024  SPI
+Eon           EN25B80T                              1024  SPI
+Eon           EN25B16                               2048  SPI
+Eon           EN25B16T                              2048  SPI
+Eon           EN25B32                               4096  SPI
+Eon           EN25B32T                              4096  SPI
+Eon           EN25B64                               8192  SPI
+Eon           EN25B64T                              8192  SPI
+Eon           EN25F05                PREW             64  SPI
+Eon           EN25F10                                128  SPI
+Eon           EN25F20                                256  SPI
+Eon           EN25F40                P               512  SPI
+Eon           EN25F80                PREW           1024  SPI
+Eon           EN25F16                PREW           2048  SPI
+Eon           EN25F32                               4096  SPI
+Eon           EN25F64                PREW           8192  SPI
+Eon           EN25Q40                                512  SPI
+Eon           EN25Q80(A)                            1024  SPI
+Eon           EN25Q16                               2048  SPI
+Eon           EN25Q32(A/B)           PREW           4096  SPI
+Eon           EN25Q64                PREW           8192  SPI
+Eon           EN25Q128                             16384  SPI
+Eon           EN25QH16               PR             2048  SPI
+Eon           EN25QH32                              4096  SPI
+Eon           EN25QH64                              8192  SPI
+Eon           EN25QH128                            16384  SPI
+Eon           EN25S10                                128  SPI
+Eon           EN25S20                                256  SPI
+Eon           EN25S40                                512  SPI
+Eon           EN25S80                               1024  SPI
+Eon           EN25S16                               2048  SPI
+Eon           EN25S32                               4096  SPI
+Eon           EN25S64                               8192  SPI
+Eon           EN29F010               PRE             128  Parallel
+Eon           EN29F002(A)(N)B        PR              256  Parallel
+Eon           EN29F002(A)(N)T        PREW            256  Parallel
+Eon           EN29LV640B             PREW           8192  Parallel
+Fujitsu       MBM29F004BC                            512  Parallel
+Fujitsu       MBM29F004TC                            512  Parallel
+Fujitsu       MBM29F400BC                            512  Parallel
+Fujitsu       MBM29F400TC                            512  Parallel
+GigaDevice    GD25LQ32               PREW           4096  SPI
+GigaDevice    GD25Q512                                64  SPI
+GigaDevice    GD25Q10                                128  SPI
+GigaDevice    GD25Q20(B)                             256  SPI
+GigaDevice    GD25Q40(B)                             512  SPI
+GigaDevice    GD25Q80(B)             PREW           1024  SPI
+GigaDevice    GD25Q16(B)                            2048  SPI
+GigaDevice    GD25Q32(B)                            4096  SPI
+GigaDevice    GD25Q64(B)             PREW           8192  SPI
+GigaDevice    GD25Q128B                            16384  SPI
+GigaDevice    GD25T80                               1024  SPI
+Hyundai       HY29F002T              PRE             256  Parallel
+Hyundai       HY29F002B                              256  Parallel
+Hyundai       HY29F040A                              512  Parallel
+Intel         25F160S33B8                           2048  SPI
+Intel         25F160S33T8                           2048  SPI
+Intel         25F320S33B8                           4096  SPI
+Intel         25F320S33T8                           4096  SPI
+Intel         25F640S33B8                           8192  SPI
+Intel         25F640S33T8                           8192  SPI
+Intel         28F001BN/BX-B                          128  Parallel
+Intel         28F001BN/BX-T          PR              128  Parallel
+Intel         28F002BC/BL/BV/BX-T    PRE             256  Parallel
+Intel         28F008S3/S5/SC                         512  Parallel
+Intel         28F004B5/BE/BV/BX-B                    512  Parallel
+Intel         28F004B5/BE/BV/BX-T                    512  Parallel
+Intel         28F400BV/BX/CE/CV-B                    512  Parallel
+Intel         28F400BV/BX/CE/CV-T                    512  Parallel
+Intel         82802AB                PREW            512  FWH
+Intel         82802AC                PR             1024  FWH
+Macronix      MX25L512(E)/                            64  SPI
+              MX25V512(C)
+Macronix      MX25L1005(C)/          PREW            128  SPI
+              MX25L1006E
+Macronix      MX25L2005(C)                           256  SPI
+Macronix      MX25L4005(A/C)         PREW            512  SPI
+Macronix      MX25L8005/             PREW           1024  SPI
+              MX25V8005
+Macronix      MX25L1605              PREW           2048  SPI
+Macronix      MX25L1605A/            PREW           2048  SPI
+              MX25L1606E
+Macronix      MX25L1605D/            PREW           2048  SPI
+              MX25L1608D
+Macronix      MX25L1635D                            2048  SPI
+Macronix      MX25L1635E                            2048  SPI
+Macronix      MX25L3205(A)           PREW           4096  SPI
+Macronix      MX25L3205D/            PREW           4096  SPI
+              MX25L3208D
+Macronix      MX25L3206E             PREW           4096  SPI
+Macronix      MX25L3235D                            4096  SPI
+Macronix      MX25L6405(D)           PREW           8192  SPI
+Macronix      MX25L6406E/            PREW           8192  SPI
+              MX25L6436E
+Macronix      MX25L6445E             PREW           8192  SPI
+Macronix      MX25L12805(D)          PREW          16384  SPI
+Macronix      MX25U1635E                            2048  SPI
+Macronix      MX25U3235E/F           PREW           4096  SPI
+Macronix      MX25U6435E/F                          8192  SPI
+Macronix      MX29F001B                              128  Parallel
+Macronix      MX29F001T              PREW            128  Parallel
+Macronix      MX29F002(N)B                           256  Parallel
+Macronix      MX29F002(N)T           PREW            256  Parallel
+Macronix      MX29F040                               512  Parallel
+Macronix      MX29LV040                              512  Parallel
+Micron/       M25P05-A               PREW             64  SPI
+Numonyx/ST
+Micron/       M25P05                                  64  SPI
+Numonyx/ST
+Micron/       M25P10-A               PRE             128  SPI
+Numonyx/ST
+Micron/       M25P10                                 128  SPI
+Numonyx/ST
+Micron/       M25P20                                 256  SPI
+Numonyx/ST
+Micron/       M25P20-old             PREW            256  SPI
+Numonyx/ST
+Micron/       M25P40                 PREW            512  SPI
+Numonyx/ST
+Micron/       M25P40-old                             512  SPI
+Numonyx/ST
+Micron/       M25P80                 PREW           1024  SPI
+Numonyx/ST
+Micron/       M25P16                 PR             2048  SPI
+Numonyx/ST
+Micron/       M25P32                 PREW           4096  SPI
+Numonyx/ST
+Micron/       M25P64                 PREW           8192  SPI
+Numonyx/ST
+Micron/       M25P128                PREW          16384  SPI
+Numonyx/ST
+Micron/       M25PE10                                128  SPI
+Numonyx/ST
+Micron/       M25PE20                                256  SPI
+Numonyx/ST
+Micron/       M25PE40                                512  SPI
+Numonyx/ST
+Micron/       M25PE80                PREW           1024  SPI
+Numonyx/ST
+Micron/       M25PE16                               2048  SPI
+Numonyx/ST
+Micron/       M25PX80                PREW           1024  SPI
+Numonyx/ST
+Micron/       M25PX16                PREW           2048  SPI
+Numonyx/ST
+Micron/       M25PX32                PRE            4096  SPI
+Numonyx/ST
+Micron/       M25PX64                PRE            8192  SPI
+Numonyx/ST
+Micron/       M45PE10                                128  SPI
+Numonyx/ST
+Micron/       M45PE20                                256  SPI
+Numonyx/ST
+Micron/       M45PE40                                512  SPI
+Numonyx/ST
+Micron/       M45PE80                               1024  SPI
+Numonyx/ST
+Micron/       M45PE16                               2048  SPI
+Numonyx/ST
+Micron/       N25Q016                               2048  SPI
+Numonyx/ST
+Micron/       N25Q032..1E                           4096  SPI
+Numonyx/ST
+Micron/       N25Q032..3E            PREW           4096  SPI
+Numonyx/ST
+Micron/       N25Q064..1E                           8192  SPI
+Numonyx/ST
+Micron/       N25Q064..3E            PREW           8192  SPI
+Numonyx/ST
+Micron/       N25Q128..1E                          16384  SPI
+Numonyx/ST
+Micron/       N25Q128..3E            PREW          16384  SPI
+Numonyx/ST
+MoselVitelic  V29C51000B                              64  Parallel
+MoselVitelic  V29C51000T                              64  Parallel
+MoselVitelic  V29C51400B                             512  Parallel
+MoselVitelic  V29C51400T                             512  Parallel
+MoselVitelic  V29LC51000                              64  Parallel
+MoselVitelic  V29LC51001                             128  Parallel
+MoselVitelic  V29LC51002                             256  Parallel
+Nantronics    N25S10                                 128  SPI
+Nantronics    N25S20                                 256  SPI
+Nantronics    N25S40                                 512  SPI
+Nantronics    N25S80                                1024  SPI
+Nantronics    N25S16                                2048  SPI
+PMC           Pm25LD256C                              32  SPI
+PMC           Pm25LD512(C)           PREW             64  SPI
+PMC           Pm25LD010(C)                           128  SPI
+PMC           Pm25LD020(C)                           256  SPI
+PMC           Pm25LD040(C)                           512  SPI
+PMC           Pm25LV512(A)                            64  SPI
+PMC           Pm25LV010                              128  SPI
+PMC           Pm25LV010A             PREW            128  SPI
+PMC           Pm25LV020                              256  SPI
+PMC           Pm25LV040              PREW            512  SPI
+PMC           Pm25LV080B                            1024  SPI
+PMC           Pm25LV016B                            2048  SPI
+PMC           Pm29F002T              PREW            256  Parallel
+PMC           Pm29F002B                              256  Parallel
+PMC           Pm39LV010              PREW            128  Parallel
+PMC           Pm39LV020                              256  Parallel
+PMC           Pm39LV040              PR              512  Parallel
+PMC           Pm39LV512              PREW             64  Parallel
+PMC           Pm49FL002              PREW            256  LPC, FWH
+PMC           Pm49FL004              PREW            512  LPC, FWH
+Sanyo         LE25FW203A                             256  SPI
+Sanyo         LE25FW403A                             512  SPI
+Sanyo         LE25FW418A                             512  SPI
+Sanyo         LE25FW806                             1024  SPI
+Sanyo         LE25FW808                             1024  SPI
+Sharp         LH28F008BJT-BTLZ1      PREW           1024  Parallel
+Sharp         LHF00L04                              1024  FWH
+Spansion      S25FL004A                              512  SPI
+Spansion      S25FL008A              PRE            1024  SPI
+Spansion      S25FL016A              PR             2048  SPI
+Spansion      S25FL032A/P            PREW           4096  SPI
+Spansion      S25FL064A/P            PREW           8192  SPI
+Spansion      S25FL204K                              512  SPI
+Spansion      S25FL208K                             1024  SPI
+Spansion      S25FL116K/                            2048  SPI
+              S25FL216K
+Spansion      S25FL128S......0                     16384  SPI
+SST           SST25LF040A            PREW            512  SPI
+SST           SST25LF080(A)                         1024  SPI
+SST           SST25VF010             PREW            128  SPI
+SST           SST25VF016B            PREW           2048  SPI
+SST           SST25VF032B            PREW           4096  SPI
+SST           SST25VF064C            PREW           8192  SPI
+SST           SST25VF040             PR              512  SPI
+SST           SST25VF040B            PREW            512  SPI
+SST           SST25VF040B.REMS       PREW            512  SPI
+SST           SST25VF080B            PREW           1024  SPI
+SST           SST25WF512                              64  SPI
+SST           SST25WF010                             128  SPI
+SST           SST25WF020                             256  SPI
+SST           SST25WF040                             512  SPI
+SST           SST28SF040A                            512  Parallel
+SST           SST29EE010             PR              128  Parallel
+SST           SST29LE010                             128  Parallel
+SST           SST29EE020A            PRE             256  Parallel
+SST           SST29LE020             PRE             256  Parallel
+SST           SST39SF512             PREW             64  Parallel
+SST           SST39SF010A            PREW            128  Parallel
+SST           SST39SF020A            PREW            256  Parallel
+SST           SST39SF040             PREW            512  Parallel
+SST           SST39VF512             PREW             64  Parallel
+SST           SST39VF010             PREW            128  Parallel
+SST           SST39VF020                             256  Parallel
+SST           SST39VF040                             512  Parallel
+SST           SST39VF080                            1024  Parallel
+SST           SST49LF002A/B          PREW            256  FWH
+SST           SST49LF003A/B          PREW            384  FWH
+SST           SST49LF004A/B          PREW            512  FWH
+SST           SST49LF004C                            512  FWH
+SST           SST49LF008A            PREW           1024  FWH
+SST           SST49LF008C                           1024  FWH
+SST           SST49LF016C            PREW           2048  FWH
+SST           SST49LF020             PREW            256  LPC
+SST           SST49LF020A            PRE             256  LPC
+SST           SST49LF040             PRE             512  LPC
+SST           SST49LF040B            PREW            512  LPC
+SST           SST49LF080A            PREW           1024  LPC
+SST           SST49LF160C            PRE            2048  LPC
+ST            M29F002B                               256  Parallel
+ST            M29F002T/NT            PREW            256  Parallel
+ST            M29F040B                               512  Parallel
+ST            M29F400BB                              512  Parallel
+ST            M29F400BT                              512  Parallel
+ST            M29W010B                               128  Parallel
+ST            M29W040B                               512  Parallel
+ST            M29W512B               PREW             64  Parallel
+ST            M50FLW040A                             512  LPC, FWH
+ST            M50FLW040B                             512  LPC, FWH
+ST            M50FLW080A             PRE            1024  LPC, FWH
+ST            M50FLW080B                            1024  LPC, FWH
+ST            M50FW002                               256  FWH
+ST            M50FW016                              2048  FWH
+ST            M50FW040               PR              512  FWH
+ST            M50FW080               PREW           1024  FWH
+ST            M50LPW116                             2048  LPC
+SyncMOS/      {F,S,V}29C51001B                       128  Parallel
+MoselVitelic
+SyncMOS/      {F,S,V}29C51001T                       128  Parallel
+MoselVitelic
+SyncMOS/      {F,S,V}29C51002B                       256  Parallel
+MoselVitelic
+SyncMOS/      {F,S,V}29C51002T       PREW            256  Parallel
+MoselVitelic
+SyncMOS/      {F,S,V}29C51004B                       512  Parallel
+MoselVitelic
+SyncMOS/      {F,S,V}29C51004T                       512  Parallel
+MoselVitelic
+SyncMOS/      {S,V}29C31004B                         512  Parallel
+MoselVitelic
+SyncMOS/      {S,V}29C31004T                         512  Parallel
+MoselVitelic
+TI            TMS29F002RB                            256  Parallel
+TI            TMS29F002RT                            256  Parallel
+Winbond       W25Q80.V               PREW           1024  SPI
+Winbond       W25Q16.V               PREW           2048  SPI
+Winbond       W25Q32.V               PREW           4096  SPI
+Winbond       W25Q64.V               PREW           8192  SPI
+Winbond       W25Q128.V              PREW          16384  SPI
+Winbond       W25Q20.W                               256  SPI
+Winbond       W25Q40.W                               512  SPI
+Winbond       W25Q80.W                              1024  SPI
+Winbond       W25Q16.W                              2048  SPI
+Winbond       W25Q32.W               PREW           4096  SPI
+Winbond       W25Q64.W               PREW           8192  SPI
+Winbond       W25X10                 PREW            128  SPI
+Winbond       W25X20                 PREW            256  SPI
+Winbond       W25X40                 PREW            512  SPI
+Winbond       W25X80                 PREW           1024  SPI
+Winbond       W25X16                 PREW           2048  SPI
+Winbond       W25X32                 P              4096  SPI
+Winbond       W25X64                 P              8192  SPI
+Winbond       W29C010(M)/            PRE             128  Parallel
+              W29C011A/
+              W29EE011/
+              W29EE012-old
+Winbond       W29C010(M)/            PREW            128  Parallel
+              W29C011A/
+              W29EE011/
+              W29EE012
+Winbond       W29C020(C)/            PREW            256  Parallel
+              W29C022
+Winbond       W29C040/P                              512  Parallel
+Winbond       W39F010                PREW            128  Parallel
+Winbond       W39L010                                128  Parallel
+Winbond       W39L020                                256  Parallel
+Winbond       W39L040                PR              512  Parallel
+Winbond       W39V040A               PREW            512  LPC
+Winbond       W39V040B               PREW            512  LPC
+Winbond       W39V040C               PREW            512  LPC
+Winbond       W39V040FA              PREW            512  FWH
+Winbond       W39V040FB              PREW            512  FWH
+Winbond       W39V040FC              PREW            512  FWH
+Winbond       W39V080A               PREW           1024  LPC
+Winbond       W49F002U/N             PREW            256  Parallel
+Winbond       W49F020                P               256  Parallel
+Winbond       W49V002A               PREW            256  LPC
+Winbond       W49V002FA              PREW            256  FWH
+Winbond       W39V080FA              PREW           1024  FWH
+Winbond       W39V080FA (dual mode)                  512  FWH
+
+Supported programmers:
+dummy, ft2232_spi, serprog, buspirate_spi, pony_spi, usbblaster_spi
+
+Supported devices for the dummy programmer:
+Dummy device, does nothing and logs all accesses
+
+Supported USB devices for the ft2232_spi programmer:
+FTDI FT2232H [0403:6010]
+FTDI FT4232H [0403:6011]
+FTDI FT232H [0403:6014]
+TIAO USB Multi-Protocol Adapter [0403:8a98]
+Amontec JTAGkey [0403:cff8]
+GOEPEL PicoTAP [096c:1449]
+FIC OpenMoko Neo1973 Debug board (V2+) [1457:5118]
+Olimex ARM-USB-OCD [15ba:0003] (untested)
+Olimex ARM-USB-TINY [15ba:0004]
+Olimex ARM-USB-OCD-H [15ba:002b] (untested)
+Olimex ARM-USB-TINY-H [15ba:002a] (untested)
+
+Supported devices for the serprog programmer:
+All programmer devices speaking the serprog protocol
+
+Supported devices for the buspirate_spi programmer:
+Dangerous Prototypes Bus Pirate
+
+Supported devices for the pony_spi programmer:
+Programmers compatible with SI-Prog, serbang or AJAWe
+
+Supported USB devices for the usbblaster_spi programmer:
+Altera USB-Blaster [09fb:6001]
