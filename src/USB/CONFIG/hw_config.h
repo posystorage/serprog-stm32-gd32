@@ -11,6 +11,10 @@
 #define BULK_MAX_PACKET_SIZE 0x00000040            /* Max packet size for FullSpeed bulk transfer */
 #define VCP_DATA_SIZE        0x40                  /* Should be the same as BULK_MAX_PACKET_SIZE */
 
+#define USB_SC_PORT						GPIOC							//D+上拉电阻
+#define USB_SC_PIN						GPIO_Pin_9
+#define USB_SC_CLOCK					RCC_APB2Periph_GPIOC
+
 //定义一个USB USART FIFO结构体
 typedef struct  
 {										    

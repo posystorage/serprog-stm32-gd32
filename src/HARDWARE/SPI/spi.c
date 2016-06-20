@@ -29,21 +29,35 @@ SPI_InitTypeDef SPI_InitStructure;
 void SPI_IO_Init(void)
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
-  
-	RCC_APB2PeriphClockCmd(	RCC_APB2Periph_GPIOA|RCC_APB2Periph_SPI1, ENABLE );	
- 
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5 | GPIO_Pin_7;
+#ifdef USE_SPI2
+	RCC_APB2PeriphClockCmd(	RCC_APB2Periph_GPIOB, ENABLE );
+  RCC_APB1PeriphClockCmd(	RCC_APB1Periph_SPI2 , ENABLE );
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13 | GPIO_Pin_15;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;  //复用推挽输出
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOB, &GPIO_InitStructure);
+  GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_14;
+  GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_IN_FLOATING;
+  GPIO_Init(GPIOB, &GPIO_InitStructure);
+	GPIO_InitStructure.GPIO_Pin   = SPI_SC_PIN;
+  GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_Out_PP;
+  GPIO_Init(SPI_SC_PORT, &GPIO_InitStructure);
+ 	GPIO_SetBits(SPI_SC_PORT,SPI_SC_PIN);
+#endif
+#ifdef USE_SPI1
+	RCC_APB2PeriphClockCmd(	RCC_APB2Periph_GPIOA|RCC_APB2Periph_SPI1, ENABLE );
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5 | GPIO_Pin_7;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;  
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
   GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_6;
   GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_IN_FLOATING;
   GPIO_Init(GPIOA, &GPIO_InitStructure);
-	GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_4;
+	GPIO_InitStructure.GPIO_Pin   = SPI_SC_PIN;
   GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_Out_PP;
-  GPIO_Init(GPIOA, &GPIO_InitStructure);
- 	GPIO_SetBits(GPIOA,GPIO_Pin_4);
-
+  GPIO_Init(SPI_SC_PORT, &GPIO_InitStructure);
+ 	GPIO_SetBits(SPI_SC_PORT,SPI_SC_PIN);
+#endif	
 }   
 
 void DMA_configuration(void)
@@ -124,9 +138,6 @@ uint32_t spi_conf(uint32_t speed_hz) {
   SPI_InitStructure.SPI_DataSize           = SPI_DataSize_8b;
   SPI_InitStructure.SPI_CPOL               = SPI_CPOL_Low;
   SPI_InitStructure.SPI_CPHA               = SPI_CPHA_1Edge;
-	//SPI_InitStructure.SPI_CPOL = SPI_CPOL_High;		//选择了串行时钟的稳态:时钟悬空高
-	//SPI_InitStructure.SPI_CPHA = SPI_CPHA_2Edge;	//数据捕获于第二个时钟沿
-	
   SPI_InitStructure.SPI_NSS                = SPI_NSS_Soft;
   SPI_InitStructure.SPI_FirstBit           = SPI_FirstBit_MSB;
   SPI_InitStructure.SPI_CRCPolynomial      = 7;	

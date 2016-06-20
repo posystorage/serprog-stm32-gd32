@@ -62,7 +62,7 @@ void Set_USBClock(void)
 //需自行添加低功耗代码(比如关时钟等)
 void Enter_LowPowerMode(void)
 {
- 	printf("usb enter low power mode\r\n");
+ 	//printf("usb enter low power mode\r\n");
 	bDeviceState=SUSPENDED;
 } 
 
@@ -71,7 +71,7 @@ void Enter_LowPowerMode(void)
 void Leave_LowPowerMode(void)
 {
 	DEVICE_INFO *pInfo=&Device_Info;
-	printf("leave low power mode\r\n"); 
+	//printf("leave low power mode\r\n"); 
 	if (pInfo->Current_Configuration!=0)bDeviceState=CONFIGURED; 
 	else bDeviceState = ATTACHED; 
 } 
@@ -108,10 +108,23 @@ void USB_Interrupts_Config(void)
 //NewState:DISABLE,不上拉
 //         ENABLE,上拉
 void USB_Cable_Config (FunctionalState NewState)
-{ 
-	if (NewState!=DISABLE)printf("usb pull up enable\r\n"); 
-	else printf("usb pull up disable\r\n"); 
+{
+	GPIO_InitTypeDef  GPIO_InitStructure; 
+	if (NewState==ENABLE)
+	{	
+		 RCC_APB2PeriphClockCmd(USB_SC_CLOCK, ENABLE);	 		
+		 GPIO_InitStructure.GPIO_Pin = USB_SC_PIN;				
+		 GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 //推挽输出
+		 GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 //IO口速度为50MHz
+		 GPIO_Init(USB_SC_PORT, &GPIO_InitStructure);					 
+		 GPIO_SetBits(USB_SC_PORT,USB_SC_PIN);						
+	}
+	else
+	{
+		GPIO_ResetBits(USB_SC_PORT,USB_SC_PIN);
+	}
 }
+
 
 //USB使能连接/断线
 //enable:0,断开
