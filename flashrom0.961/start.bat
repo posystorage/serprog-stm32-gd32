@@ -33,10 +33,18 @@ if /i "%input%"=="5" Goto five
 pause 
 goto Menu
 : two
+ :suba
 @ echo.此处需要先建立一个文件，重命名为xxx.bin，再拖到此处
- :sub
  set /p road=拖动需要保存到的文件路径：
  set road=%road:"=%
+ for %%a in ("%road%") do set rn=%%~xa
+ set rn=%rn:.=%
+ if  %rn%==bin goto oka
+ cls
+ echo 文件错误 重新输入
+ pause
+ goto suba
+ :oka
  set /p chipa=请输入FLASH芯片型号（eg:MX25L3206E）并按回车：
  %~dp0flashrom -p serprog:dev=\\.\com%com%:115200 -c  %chipa% -r %road%
 pause 
@@ -47,16 +55,33 @@ goto Menu
 pause 
 goto Menu
 : four
- :sub
+ :subb
  set /p road=拖动需要写入的文件到此处：
  set road=%road:"=%
+ for %%a in ("%road%") do set rn=%%~xa
+ set rn=%rn:.=%
+ if  %rn%==bin goto okb
+ cls
+ echo 文件错误 重新输入
+ pause
+ goto subb
+ :okb
  set /p chipc=请输入FLASH芯片型号（eg:MX25L3206E）并按回车：
  %~dp0flashrom -p serprog:dev=\\.\com%com%:115200 -c %chipc% -w %road%
 pause 
 goto Menu
 : five
+ :subc
  set /p road=拖动需要校验的文件到此处：
  set road=%road:"=%
+ for %%a in ("%road%") do set rn=%%~xa
+ set rn=%rn:.=%
+ if  %rn%==bin goto okc
+ cls
+ echo 文件错误 重新输入
+ pause
+ goto subc
+ :okc
  set /p chipd=请输入FLASH芯片型号（eg:MX25L3206E）并按回车：
  %~dp0flashrom -p serprog:dev=\\.\com%com%:115200 -c %chipd% -v %road%
 pause 
