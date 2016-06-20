@@ -33,9 +33,12 @@ if /i "%input%"=="5" Goto five
 pause 
 goto Menu
 : two
- set /p filea=请输入读取后保存的地址和保存名（eg:f:\read.bin）并按回车：
+@ echo.此处需要先建立一个文件，重命名为xxx.bin，再拖到此处
+ :sub
+ set /p road=拖动需要保存到的文件路径：
+ set road=%road:"=%
  set /p chipa=请输入FLASH芯片型号（eg:MX25L3206E）并按回车：
- %~dp0flashrom -p serprog:dev=\\.\com%com%:115200 -c  %chipa% -r %filea%
+ %~dp0flashrom -p serprog:dev=\\.\com%com%:115200 -c  %chipa% -r %road%
 pause 
 goto Menu
 : three
@@ -44,16 +47,17 @@ goto Menu
 pause 
 goto Menu
 : four
-
- set /p fileb=请输入需写入文件的地址和名称（eg:f:\write.bin）并按回车：
+ :sub
+ set /p road=拖动需要写入的文件到此处：
+ set road=%road:"=%
  set /p chipc=请输入FLASH芯片型号（eg:MX25L3206E）并按回车：
- %~dp0flashrom -p serprog:dev=\\.\com%com%:115200 -c %chipc% -w %fileb%
+ %~dp0flashrom -p serprog:dev=\\.\com%com%:115200 -c %chipc% -w %road%
 pause 
 goto Menu
 : five
-
- set /p filec=请输入需校验文件的地址和名称（eg:f:\verify.bin）并按回车：
+ set /p road=拖动需要校验的文件到此处：
+ set road=%road:"=%
  set /p chipd=请输入FLASH芯片型号（eg:MX25L3206E）并按回车：
- %~dp0flashrom -p serprog:dev=\\.\com%com%:115200 -c %chipd% -v %filec%
+ %~dp0flashrom -p serprog:dev=\\.\com%com%:115200 -c %chipd% -v %road%
 pause 
 goto Menu

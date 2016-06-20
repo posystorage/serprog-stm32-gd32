@@ -11,14 +11,13 @@
 
 	
 void serprog_handle_command(unsigned char command) {
-  //led_off();
 
   static uint8_t   i;        /* Loop            */
   static uint8_t   l;        /* Length          */
   static uint32_t  slen;     /* SPIOP write len */
   static uint32_t  rlen;     /* SPIOP read len  */
   static uint32_t  freq_req;
-
+	LED0=0;
   switch(command) {
     case S_CMD_NOP:
       usb_putc(S_ACK);
@@ -112,18 +111,17 @@ void serprog_handle_command(unsigned char command) {
     default: break; // TODO: Debug malformed command
   }
 
-  //led_on();
+ LED0=1;
 }
 
 
  int main(void)
  { 
-	 u8 usbstatus=0;
 	delay_init();	    	 //延时函数初始化	  
 	uart_init(9600);	 	//串口初始化为9600
 	LED_Init();		  		//初始化与LED连接的硬件接口
 	  
-	 
+	USB_Cable_Config (ENABLE); 
 	delay_ms(1800);
 	USB_Port_Set(0); 	
 	delay_ms(700);
@@ -135,24 +133,14 @@ void serprog_handle_command(unsigned char command) {
 	 SPI_IO_Init(); 
 	 DMA_configuration();
 	spi_conf(SPI_DEFAULT_SPEED);
-	 LED0=0;
+	LED1=0;
 	while(1)
-	{
-		    /* Get command */
+	{	
+		/* Get command */
     serprog_handle_command(usb_getc());
     /* Flush output via USB */
     usb_sync();
-		if(usbstatus!=bDeviceState)
-		{
-			usbstatus=bDeviceState;
-			if(usbstatus==CONFIGURED)
-			{
-				LED1=0;
-			}else
-			{				
-				LED1=1;
-			}
-		}
+		
 	}
 }
 
