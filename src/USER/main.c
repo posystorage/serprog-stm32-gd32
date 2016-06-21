@@ -122,9 +122,9 @@ void serprog_handle_command(unsigned char command) {
 	LED_Init();		  		//初始化与LED连接的硬件接口
 	  
 	USB_Cable_Config (ENABLE); 
-	delay_ms(1800);
+	delay_ms(500);
 	USB_Port_Set(0); 	
-	delay_ms(700);
+	delay_ms(500);
 	USB_Port_Set(1);	
  	Set_USBClock();   
  	USB_Interrupts_Config();    
@@ -134,6 +134,7 @@ void serprog_handle_command(unsigned char command) {
 	 DMA_configuration();
 	spi_conf(SPI_DEFAULT_SPEED);
 	LED1=0;
+	LED2=0;
 	while(1)
 	{	
 		/* Get command */

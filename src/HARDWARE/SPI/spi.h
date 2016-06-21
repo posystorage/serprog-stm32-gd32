@@ -17,7 +17,7 @@ void SPI_IO_Init(void);			 //³õÊ¼»¯SPI¿Ú
 
 #define SPI_BUS_USED         SPI2
 //#define SPI_ENGINE_RCC       RCC_APB1Periph_SPI2
-#define SPI_DEFAULT_SPEED    9000000              // Default SPI clock = 9MHz to support most chips.
+#define SPI_DEFAULT_SPEED    36000000              // Default SPI clock = 9MHz to support most chips.
 #define SPI_DR_Base          (&(SPI_BUS_USED->DR))
 #define SPI_TX_DMA_CH        DMA1_Channel5         // SPI1 TX is only available on DMA1 CH5 
 #define SPI_TX_DMA_FLAG      DMA1_FLAG_TC5
