@@ -120,7 +120,9 @@ void serprog_handle_command(unsigned char command) {
 	delay_init();	    	 //延时函数初始化	  
 	uart_init(9600);	 	//串口初始化为9600
 	LED_Init();		  		//初始化与LED连接的硬件接口
-	  
+	 LED0=1;
+	 LED1=1;
+	LED2=1;
 	USB_Cable_Config (ENABLE); 
 	delay_ms(500);
 	USB_Port_Set(0); 	

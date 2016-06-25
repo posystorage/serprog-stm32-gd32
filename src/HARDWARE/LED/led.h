@@ -2,8 +2,8 @@
 #define __LED_H	 
 #include "sys.h"
 
-#define LED0 PCout(7)	
-#define LED1 PCout(8)	
+#define LED0 PBout(7)	
+#define LED1 PBout(8)	
 #define LED2 PBout(4)	
 
 //ºìÉ«ÊÇPC7
