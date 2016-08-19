@@ -132,8 +132,8 @@ void serprog_handle_command(unsigned char command) {
  	USB_Interrupts_Config();    
  	USB_Init();	 	 
 	 	 	
-	 SPI_IO_Init(); 
-	 DMA_configuration();
+	SPI_IO_Init(); 
+	DMA_configuration();
 	spi_conf(SPI_DEFAULT_SPEED);
 	LED1=0;
 	LED2=0;
@@ -142,8 +142,7 @@ void serprog_handle_command(unsigned char command) {
 		/* Get command */
     serprog_handle_command(usb_getc());
     /* Flush output via USB */
-    usb_sync();
-		
+    usb_sync();		
 	}
 }
 

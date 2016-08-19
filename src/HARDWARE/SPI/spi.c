@@ -38,6 +38,7 @@ void SPI_IO_Init(void)
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
   GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_14;
   GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_IN_FLOATING;
+//	GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AF_PP;
   GPIO_Init(GPIOB, &GPIO_InitStructure);
 	GPIO_InitStructure.GPIO_Pin   = SPI_SC_PIN;
   GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_Out_PP;
@@ -136,7 +137,9 @@ uint32_t spi_conf(uint32_t speed_hz) {
   SPI_InitStructure.SPI_Direction          = SPI_Direction_2Lines_FullDuplex;
   SPI_InitStructure.SPI_Mode               = SPI_Mode_Master;
   SPI_InitStructure.SPI_DataSize           = SPI_DataSize_8b;
-  SPI_InitStructure.SPI_CPOL               = SPI_CPOL_Low;
+//SPI_InitStructure.SPI_CPOL               = SPI_CPOL_High;
+//SPI_InitStructure.SPI_CPHA               = SPI_CPHA_2Edge;
+	SPI_InitStructure.SPI_CPOL               = SPI_CPOL_Low;
   SPI_InitStructure.SPI_CPHA               = SPI_CPHA_1Edge;
   SPI_InitStructure.SPI_NSS                = SPI_NSS_Soft;
   SPI_InitStructure.SPI_FirstBit           = SPI_FirstBit_MSB;

@@ -57,32 +57,32 @@ uint8_t USB_Rx_Buffer[VIRTUAL_COM_PORT_DATA_SIZE];
 *******************************************************************************/
 void EP1_IN_Callback (void)
 {
-	u16 USB_Tx_ptr;
-	u16 USB_Tx_length; 
-	if(uu_txfifo.readptr==uu_txfifo.writeptr)		//无任何数据要发送,直接退出
-	{
-		return;
-	}
-	if(uu_txfifo.readptr<uu_txfifo.writeptr)		//没有超过数组,读指针<写指针
-	{
-		USB_Tx_length=uu_txfifo.writeptr-uu_txfifo.readptr;//得到要发送的数据长度
-	}else											//超过数组了 读指针>写指针
-	{
-		USB_Tx_length=USB_USART_TXFIFO_SIZE-uu_txfifo.readptr;//得到要发送的数据长度 
-	} 
-	if(USB_Tx_length>VIRTUAL_COM_PORT_DATA_SIZE)	//超过64字节?
-	{
-		USB_Tx_length=VIRTUAL_COM_PORT_DATA_SIZE;	//此次发送数据量
-	}
-	USB_Tx_ptr=uu_txfifo.readptr;					//发送起始地址		
-	uu_txfifo.readptr+=USB_Tx_length;				//读指针偏移  
-	if(uu_txfifo.readptr>=USB_USART_TXFIFO_SIZE)	//读指针归零
-	{
-		uu_txfifo.readptr=0;
-	} 
-	UserToPMABufferCopy(&uu_txfifo.buffer[USB_Tx_ptr], ENDP1_TXADDR, USB_Tx_length);
-	SetEPTxCount(ENDP1, USB_Tx_length);
-	SetEPTxValid(ENDP1);   
+//	u16 USB_Tx_ptr;
+//	u16 USB_Tx_length; 
+//	if(uu_txfifo.readptr==uu_txfifo.writeptr)		//无任何数据要发送,直接退出
+//	{
+//		return;
+//	}
+//	if(uu_txfifo.readptr<uu_txfifo.writeptr)		//没有超过数组,读指针<写指针
+//	{
+//		USB_Tx_length=uu_txfifo.writeptr-uu_txfifo.readptr;//得到要发送的数据长度
+//	}else											//超过数组了 读指针>写指针
+//	{
+//		USB_Tx_length=USB_USART_TXFIFO_SIZE-uu_txfifo.readptr;//得到要发送的数据长度 
+//	} 
+//	if(USB_Tx_length>VIRTUAL_COM_PORT_DATA_SIZE)	//超过64字节?
+//	{
+//		USB_Tx_length=VIRTUAL_COM_PORT_DATA_SIZE;	//此次发送数据量
+//	}
+//	USB_Tx_ptr=uu_txfifo.readptr;					//发送起始地址		
+//	uu_txfifo.readptr+=USB_Tx_length;				//读指针偏移  
+//	if(uu_txfifo.readptr>=USB_USART_TXFIFO_SIZE)	//读指针归零
+//	{
+//		uu_txfifo.readptr=0;
+//	} 
+//	UserToPMABufferCopy(&uu_txfifo.buffer[USB_Tx_ptr], ENDP1_TXADDR, USB_Tx_length);
+//	SetEPTxCount(ENDP1, USB_Tx_length);
+//	SetEPTxValid(ENDP1);   
 }
 
 /*******************************************************************************
@@ -120,7 +120,7 @@ void SOF_Callback(void)
 			FrameCount = 0;
 
 			/* Check the data to be sent through IN pipe */
-			EP1_IN_Callback();//通过EP1_IN_Callback函数实现TX数据发送给USB
+			//EP1_IN_Callback();//通过EP1_IN_Callback函数实现TX数据发送给USB
 			//Handle_USBAsynchXfer();
 		}
 	}  

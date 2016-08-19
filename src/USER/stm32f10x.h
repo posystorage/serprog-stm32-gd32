@@ -50,6 +50,10 @@
 #ifndef __STM32F10x_H
 #define __STM32F10x_H
 
+#define use_12mhz_external_crystal_oscillator
+
+
+
 #ifdef __cplusplus
  extern "C" {
 #endif 
@@ -116,7 +120,11 @@
  #ifdef STM32F10X_CL   
   #define HSE_VALUE    ((uint32_t)25000000) /*!< Value of the External oscillator in Hz */
  #else 
-  #define HSE_VALUE    ((uint32_t)8000000) /*!< Value of the External oscillator in Hz */
+	#ifdef use_12mhz_external_crystal_oscillator
+		#define HSE_VALUE    ((uint32_t)12000000) /*!< Value of the External oscillator in Hz */
+	#else 
+		#define HSE_VALUE    ((uint32_t)8000000) /*!< Value of the External oscillator in Hz */
+	#endif
  #endif /* STM32F10X_CL */
 #endif /* HSE_VALUE */
 
