@@ -4,8 +4,8 @@
 
 void SPI_IO_Init(void);			 //初始化SPI口
 
-//#define USE_SPI1
-#define USE_SPI2
+#define USE_SPI1
+//#define USE_SPI2
 
 /* SPI */
 
@@ -15,7 +15,7 @@ void SPI_IO_Init(void);			 //初始化SPI口
 	#define SPI_SC_PIN						GPIO_Pin_4
 
 	#define SPI_BUS_USED         SPI1
-	#define SPI_DEFAULT_SPEED    9000000              // Default SPI clock = 9MHz to support most chips.
+	#define SPI_DEFAULT_SPEED    36000000              // Default SPI clock = 9MHz to support most chips.
 	#define SPI_DR_Base          (&(SPI_BUS_USED->DR))
 	#define SPI_TX_DMA_CH        DMA1_Channel3         // SPI1 TX is only available on DMA1 CH3 
 	#define SPI_TX_DMA_FLAG      DMA1_FLAG_TC3
@@ -32,7 +32,7 @@ void SPI_IO_Init(void);			 //初始化SPI口
 	#define SPI_SC_PIN						GPIO_Pin_12
 
 	#define SPI_BUS_USED         SPI2
-	#define SPI_DEFAULT_SPEED    36000000              // Default SPI clock = 9MHz to support most chips.
+	#define SPI_DEFAULT_SPEED    9000000              // Default SPI clock = 9MHz to support most chips.
 	#define SPI_DR_Base          (&(SPI_BUS_USED->DR))
 	#define SPI_TX_DMA_CH        DMA1_Channel5         // SPI1 TX is only available on DMA1 CH5 
 	#define SPI_TX_DMA_FLAG      DMA1_FLAG_TC5

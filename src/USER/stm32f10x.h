@@ -50,7 +50,7 @@
 #ifndef __STM32F10x_H
 #define __STM32F10x_H
 
-#define use_12mhz_external_crystal_oscillator
+//#define use_12mhz_external_crystal_oscillator
 
 
 
